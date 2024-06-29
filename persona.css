@@ -1,0 +1,58 @@
+/* Estilo base para o corpo da página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 100% da altura da tela */
+    margin: 0;
+    background-color: #000000; /* Cor de fundo clara */
+}
+
+/* Estilo para o contêiner da imagem */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para o link da imagem */
+.image-link {
+    display: inline-block;
+}
+
+/* Estilo e animação da imagem */
+.animated-image {
+    width: 200px; /* Tamanho inicial da imagem */
+    height: auto; /* Manter proporções da imagem */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    animation: pulse 2s infinite; /* Animação inicial de pulso */
+}
+
+/* Efeito de pulso da imagem */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Animação ao passar o mouse sobre a imagem */
+.animated-image:hover {
+    transform: scale(1.2); /* Aumentar a imagem em 20% */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Efeito de sombra */
+}
+
+/* Adicionando responsividade */
+@media (max-width: 600px) {
+    .animated-image {
+        width: 150px; /* Tamanho da imagem em telas menores */
+    }
+}
